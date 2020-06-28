@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/absoluteLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <Button
+        android:id="@+id/btn_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:background="@drawable/txt_rectborder"
+        android:text="打开百度" />
+    <Button
+        android:id="@+id/btn_IntoSec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:background="@drawable/txt_rectborder"
+        android:text="进入Second" />
+    <Button
+        android:id="@+id/btn_IntoMess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:background="@drawable/txt_rectborder"
+        android:text="进入Message" />
+    <Button
+        android:id="@+id/btn_IntoThird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:background="@drawable/txt_rectborder"
+        android:text="进入Third" />
+
+</LinearLayout>
+

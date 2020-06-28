@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">hello2</string>
+    <string name="paint">打印</string>
+    <string name="helloworld">Hello World!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="liaotian">聊天</string>
+    <string name="zhongduan">终端</string>
+    <string name="jianpan">键盘</string>
+    <string name="kaiguan">开关</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="xiaoxi">消息</string>
+    <string name="bianjimoshi">编辑模式</string>
+</resources>
