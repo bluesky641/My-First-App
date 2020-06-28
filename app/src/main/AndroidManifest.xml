@@ -11,28 +11,12 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ThirdActivity"/>
         <activity android:name=".SecondActivity"/>
-        <activity
-            android:name=".MessageActivity"
-            android:parentActivityName=".MainActivity">
-
-            <!-- The meta-data tag is required if you support API level 15 and lower -->
-            <!-- 隐式Intent活动 -->
-            <!-- <intent-filter> -->
-            <!-- <action android:name="com.example.MessageActivity.ACTION_START"/> -->
-            <!-- <category android:name="android.intent.category.DEFAULT"/> -->
-            <!-- </intent-filter> -->
-
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
+        <activity android:name=".MessageActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

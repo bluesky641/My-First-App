@@ -13,24 +13,32 @@ public class ThirdActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
-
+        init();
+    }
+    void init(){
         Button btn_back = (Button)findViewById(R.id.btn_back);
-        btn_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String data = "Hello Activity";
-                Intent intent3 = new Intent(ThirdActivity.this,SecondActivity.class);
-                intent3.putExtra("extra_data",data);
-                startActivity(intent3);
-            }
-        });
         Button btn_back1 = (Button)findViewById(R.id.btn_back1);
-        btn_back1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent3 = new Intent(ThirdActivity.this,MainActivity.class);
-                startActivity(intent3);
+
+        btn_back.setOnClickListener(new Click());
+        btn_back1.setOnClickListener(new Click());
+    }
+    class Click implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.btn_back:
+                    String data = "Hello Activity";
+                    Intent intent = new Intent(ThirdActivity.this,SecondActivity.class);
+                    intent.putExtra("extra_data",data);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_back1:
+                    Intent intent3 = new Intent(ThirdActivity.this,MainActivity.class);
+                    startActivity(intent3);
+                    break;
+                default:
+                    break;
             }
-        });
+        }
     }
 }

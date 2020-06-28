@@ -3,7 +3,6 @@ package com.example.hello2;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -23,7 +21,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.hello2.MESSAGE";
-    private Object view;
     private ViewPager mViewPager;
     private List<Fragment>mFragmentList;
     @Override
@@ -38,19 +35,19 @@ public class MainActivity extends AppCompatActivity {
         fragments.add(new MyFragment4());
 
         MyFragmentAdapter myFragmentAdapter = new MyFragmentAdapter(getSupportFragmentManager(),0,fragments);
-        mViewPager = findViewById(R.id.vp);
         mViewPager.setAdapter(myFragmentAdapter);
     }
     void init(){
+        mViewPager = findViewById(R.id.vp);
         Button btn_main = (Button)findViewById(R.id.btn_main);
         Button btn_IntoMess = (Button)findViewById(R.id.btn_IntoMess);
         Button btn_IntoSec = (Button)findViewById(R.id.btn_IntoSec);
-        Button btn_third = (Button)findViewById(R.id.btn_IntoThird);
+        Button btn_IntoThird = (Button)findViewById(R.id.btn_IntoThird);
 
         btn_main.setOnClickListener(new Click());
         btn_IntoMess.setOnClickListener(new Click());
         btn_IntoSec.setOnClickListener(new Click());
-        btn_third.setOnClickListener(new Click());
+        btn_IntoThird.setOnClickListener(new Click());
     }
 
     class Click implements View.OnClickListener{
@@ -80,18 +77,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//            switch (requestCode){
-//                case 1:
-//                    if(requestCode == RESULT_OK){
-//                        String returnedData = data.getStringExtra("data_return");
-//                        Log.d("MainActivity",returnedData);
-//                    }
-//                    break;
-//                default:
-//            }
-//        }
     class MyFragmentAdapter extends FragmentPagerAdapter{
 
         public MyFragmentAdapter(@NonNull FragmentManager fm,

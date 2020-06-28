@@ -1,12 +1,11 @@
 package com.example.hello2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MessageActivity extends AppCompatActivity {
 
@@ -14,19 +13,26 @@ public class MessageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
+        init();
+    }
+    void init(){
+        Button btn_mess = (Button)findViewById(R.id.btn_mess);
 
-        Button button1 = (Button)findViewById(R.id.btn_mess);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                隐式Intent活动
-//                Intent intent = new Intent("com.example.MessageActivity.ACTION_START");
-//                startActivity(intent);
-                Intent intent = new Intent();
-                intent.putExtra("data_return","Hello MainActivity");
-                setResult(RESULT_OK,intent);
-                finish();
+        btn_mess.setOnClickListener(new Click());
+    }
+    class Click implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.btn_mess:
+                    Intent intent = new Intent();
+                    intent.putExtra("data_return","Hello MainActivity");
+                    setResult(RESULT_OK,intent);
+                    finish();
+                    break;
+                default:
+                    break;
             }
-        });
+        }
     }
 }
